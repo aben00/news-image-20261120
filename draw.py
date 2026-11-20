@@ -195,56 +195,64 @@ def draw_markets(d, x, y, w, h, rng):
 
 # ------------------------------------------------------- small illustrations
 
-def draw_tower(d, x, y, w, h, rng):
-    """Riyadh's tallest skyscraper, struck: tower, burst, smoke."""
-    d.rectangle([x, y, x + w, y + h], fill=(24, 34, 64))
-    d.ellipse([x + w - 20, y + 6, x + w - 8, y + 18], fill=(238, 232, 200))
-    tx = x + w // 2 - 11
-    d.polygon([(tx, y + 8), (tx + 22, y + 8), (tx + 18, y + h),
-               (tx + 4, y + h)], fill=(60, 70, 100))
-    for wy in range(y + 16, y + h - 6, 9):
-        d.rectangle([tx + 6, wy, tx + 16, wy + 4], fill=(255, 214, 110))
-    star(d, x + w // 2 + 16, y + 18, 12, 5, 8, (255, 150, 40))
-    star(d, x + w // 2 + 16, y + 18, 6, 2, 8, (255, 220, 120))
-    for (sx, sy) in [(x + 10, y + 30), (x + 16, y + 44), (x + 8, y + 56)]:
-        d.ellipse([sx - 3, sy - 3, sx + 3, sy + 3], fill=(150, 150, 160))
-    d.rectangle([x, y + h - 8, x + w, y + h], fill=(10, 14, 26))
+def draw_intercept(d, x, y, w, h, rng):
+    """Houthi claim, 20 Nov: missiles rise over the desert, intercepts burst."""
+    d.rectangle([x, y, x + w, y + h], fill=(40, 32, 58))
+    for _ in range(14):
+        sx = x + rng.randint(4, w - 4)
+        sy = y + rng.randint(4, int(h * 0.5))
+        r = rng.choice([1, 1, 2])
+        d.ellipse([sx - r, sy - r, sx + r, sy + r], fill=(220, 220, 200))
+    d.rectangle([x, y + h - 12, x + w, y + h], fill=(194, 164, 110))
+    d.polygon([(x, y + h - 12), (x + 20, y + h - 22), (x + 44, y + h - 12)],
+              fill=(170, 140, 92))
+    for (sx, sy, ex, ey) in [(x + 12, y + h - 14, x + 34, y + 22),
+                             (x + 52, y + h - 14, x + 66, y + 16)]:
+        mx, my = (sx + ex) / 2, min(sy, ey) - 8
+        prev = None
+        for i in range(13):
+            t = i / 12
+            px = (1 - t) ** 2 * sx + 2 * (1 - t) * t * mx + t * t * ex
+            py = (1 - t) ** 2 * sy + 2 * (1 - t) * t * my + t * t * ey
+            if prev is not None:
+                d.line([prev, (px, py)], fill=(255, 196, 90), width=2)
+            prev = (px, py)
+        star(d, ex, ey, 9, 4, 8, (255, 150, 40))
+        star(d, ex, ey, 4, 2, 8, (255, 220, 120))
 
 
-def draw_tanker(d, x, y, w, h, rng):
-    """Tanker burning after hitting a mine off Hormuz."""
-    d.rectangle([x, y, x + w, y + h], fill=(198, 216, 226))
-    d.ellipse([x + 8, y + 6, x + 24, y + 22], fill=(255, 240, 180))
-    for wy in (y + 34, y + 44, y + 54):
-        d.line([(x + 4, wy), (x + w - 4, wy)], fill=(120, 160, 185), width=2)
-    hx, hy = x + 10, y + 30
-    d.polygon([(hx, hy), (hx + 56, hy), (hx + 50, hy + 14), (hx + 6, hy + 14)],
-              fill=(120, 40, 40))
-    d.rectangle([hx + 38, hy - 10, hx + 50, hy], fill=(200, 200, 200))
-    d.line([(hx + 44, hy - 10), (hx + 44, hy - 16)], fill=(60, 60, 60), width=2)
-    for (fx, fy, fr) in [(hx + 20, hy - 14, 8), (hx + 30, hy - 18, 6), (hx + 14, hy - 8, 5)]:
-        star(d, fx, fy, fr, fr // 2, 8, (255, 150, 40))
-    for (sx, sy) in [(hx + 26, hy - 24), (hx + 34, hy - 28), (hx + 18, hy - 26)]:
-        d.ellipse([sx - 4, sy - 3, sx + 4, sy + 3], fill=(120, 120, 125))
+def draw_index(d, x, y, w, h, rng):
+    """Anthropic joins the big indexes: rising green bars and an AI chip."""
+    d.rectangle([x, y, x + w, y + h], fill=(238, 240, 232))
+    for i, bh in enumerate([14, 22, 18, 30, 38]):
+        bx = x + 8 + i * 11
+        d.rectangle([bx, y + h - 12 - bh, bx + 8, y + h - 12],
+                    fill=(40, 130, 70))
+    d.line([(x + 6, y + h - 26), (x + 66, y + h - 44)], fill=(40, 130, 70), width=3)
+    d.polygon([(x + 66, y + h - 44), (x + 56, y + h - 44), (x + 64, y + h - 34)],
+              fill=(40, 130, 70))
+    cx, cy = x + w - 20, y + 16
+    d.rectangle([cx - 10, cy - 10, cx + 10, cy + 10], fill=(31, 58, 95))
+    d.text((cx, cy), "AI", font=sans_b(10), fill=(255, 255, 255), anchor="mm")
 
 
-def draw_drones(d, x, y, w, h, rng):
-    """Genoa airport: plane grounded, drones overhead."""
-    d.rectangle([x, y, x + w, y + h], fill=(214, 228, 238))
-    for (dx, dy) in [(x + 14, y + 12), (x + 40, y + 8), (x + 62, y + 16)]:
-        d.ellipse([dx - 2, dy - 2, dx + 2, dy + 2], fill=(40, 40, 40))
-        d.ellipse([dx - 5, dy - 1, dx - 3, dy + 1], fill=(40, 40, 40))
-        d.ellipse([dx + 3, dy - 1, dx + 5, dy + 1], fill=(40, 40, 40))
-    d.line([(x, y + h - 12), (x + w, y + h - 12)], fill=(90, 90, 90), width=2)
-    for lx in range(x + 6, x + w - 4, 14):
-        d.line([(lx, y + h - 12), (lx, y + h - 9)], fill=(255, 255, 255), width=2)
-    px, py = x + 18, y + h - 26
-    d.ellipse([px, py, px + 34, py + 10], fill=(220, 220, 220))
-    d.polygon([(px + 30, py + 2), (px + 46, py + 5), (px + 30, py + 8)],
-              fill=(200, 200, 200))
-    d.polygon([(px + 12, py), (px + 18, py - 10), (px + 22, py)], fill=(190, 190, 190))
-    d.polygon([(px + 12, py + 10), (px + 18, py + 18), (px + 22, py + 10)],
-              fill=(190, 190, 190))
+def draw_talks(d, x, y, w, h, rng):
+    """Europe ready for talks: a table with the EU flag and a white flag."""
+    d.rectangle([x, y, x + w, y + h], fill=(232, 228, 215))
+    d.line([(x + 14, y + 8), (x + 14, y + h - 20)], fill=(90, 80, 60), width=2)
+    d.line([(x + 52, y + 8), (x + 52, y + h - 20)], fill=(90, 80, 60), width=2)
+    d.rectangle([x + 15, y + 10, x + 37, y + 30], fill=(31, 58, 95))
+    for k in range(6):
+        a = 2 * math.pi * k / 6 - math.pi / 2
+        star(d, x + 26 + 7 * math.cos(a), y + 20 + 7 * math.sin(a),
+             2, 1, 5, (255, 215, 0))
+    d.rectangle([x + 53, y + 10, x + 73, y + 30], fill=(255, 255, 255),
+                outline=(150, 150, 150))
+    d.rectangle([x + 6, y + h - 20, x + w - 6, y + h - 14], fill=(150, 110, 70))
+    d.rectangle([x + 12, y + h - 14, x + 18, y + h - 4], fill=(120, 85, 50))
+    d.rectangle([x + w - 18, y + h - 14, x + w - 12, y + h - 4], fill=(120, 85, 50))
+    d.ellipse([x + 34, y + h - 34, x + 42, y + h - 26], fill=(232, 190, 150))
+    d.ellipse([x + 34, y + h - 34, x + 42, y + h - 30], fill=(60, 50, 40))
 
 
 def draw_crowd(d, x, y, w, h, rng):
@@ -369,15 +377,15 @@ LEADS = [
 ]
 
 MINIS = [
-    {"num": 4, "kicker": "MIDEAST", "headline": "HOUTHI STRIKE HITS RIYADH TOWER",
-     "body": "Attack damages Saudi Arabia's tallest skyscraper; five missiles downed.",
-     "draw": draw_tower},
-    {"num": 5, "kicker": "ENERGY", "headline": "TANKER BURNS OFF HORMUZ",
-     "body": "A tanker catches fire after hitting a mine east of the Strait of Hormuz.",
-     "draw": draw_tanker},
-    {"num": 6, "kicker": "ITALY", "headline": "DRONES SHUT GENOA AIRPORT",
-     "body": "Genoa airport suspends flights after unidentified drones are detected.",
-     "draw": draw_drones},
+    {"num": 4, "kicker": "MIDEAST", "headline": "HOUTHIS CLAIM 4 SAUDI STRIKES",
+     "body": "Houthis claim strikes on four Saudi targets; five missiles downed.",
+     "draw": draw_intercept},
+    {"num": 5, "kicker": "MARKETS", "headline": "ANTHROPIC JOINS TOP INDEXES",
+     "body": "Anthropic joins MSCI and FTSE global indexes after its record IPO.",
+     "draw": draw_index},
+    {"num": 6, "kicker": "EUROPE", "headline": "EUROPE READY FOR TALKS",
+     "body": "Europe is ready for talks with Russia on ending the war, leaders say.",
+     "draw": draw_talks},
     {"num": 7, "kicker": "JAPAN", "headline": "13,000 MARCH IN TOKYO",
      "body": "Thousands protest in Tokyo against the Takaichi government's policies.",
      "draw": draw_crowd},
@@ -400,19 +408,19 @@ MINIS = [
 
 BRIEFS = [
     ("UKRAINE", "A projectile lands near the Dutch embassy in Kyiv, causing minor damage; the Dutch summon Russia's ambassador."),
-    ("MIDEAST", "Israeli airstrike hits a Hezbollah missile facility in eastern Lebanon."),
+    ("MARKETS", "SK Hynix and Samsung each fall more than 5% in Seoul; Advantest and SoftBank lead Tokyo's declines."),
     ("RUSSIA", "Three killed in a drone attack on the Saratov region."),
-    ("FRANCE", "One dead, 15 injured in a fire at an 18-storey apartment block."),
+    ("MARKETS", "Taiwan's dollar nears a 10-year low against the US dollar; the Indian rupee leads Asian gains."),
     ("GEORGIA", "A 3-year-old is rescued from rubble 8 hours after a Tbilisi gas explosion."),
     ("LEBANON", "The US sanctions Hezbollah-linked charities and gold traders."),
     ("VENEZUELA", "Venezuela signs a military deal with the US less than a year after Maduro's removal."),
     ("WASHINGTON", "The White House taps Kirsten Davies as cyber chief after widespread outages."),
     ("TECH", "California targets Nvidia in a China AI chip probe."),
-    ("EUROPE", "Europe is ready for talks with Russia on ending the war, leaders say."),
+    ("INDIA", "GIFT Nifty points to a gap-down start for Indian markets."),
     ("YEMEN", "Yemen's parliament passes a law designating the Houthis a terrorist organisation."),
     ("ENERGY", "IEA calls the Mideast conflict the biggest energy security threat in history."),
     ("TECH", "IEA: data-centre power use could double by 2030, straining grids."),
-    ("MARKETS", "Anthropic joins MSCI Large Cap and FTSE global indexes after its record IPO."),
+    ("WASHINGTON", "Congress is back facing a Dec 11 deadline to fund the government or trigger a partial shutdown."),
     ("CHILDREN", "Nearly a quarter of the world's children live in conflict zones, Save the Children says."),
     ("INDIA", "Modi hails India's growth at the FICCI centenary convention in New Delhi."),
     ("BANGLADESH", "A fire is reported at Muhammad Yunus's ancestral home in Chattogram."),
@@ -471,8 +479,8 @@ PINS = [
     (2, 86.0, 19.8, 11, 6),
     (3, 139.7, 35.7, 11, -13),
     (4, 46.7, 24.7, 12, -11),
-    (5, 56.5, 26.5, 11, 9),
-    (6, 8.9, 44.4, 13, 12),
+    (5, -74.0, 40.7, 11, -13),
+    (6, 13.4, 52.5, 12, -12),
     (7, 139.7, 35.7, 11, 11),
     (8, -17.2, 14.7, -15, 11),
     (9, 4.35, 50.85, 9, -16),
