@@ -8,21 +8,29 @@ Sum up 20 November's world news in one image — a "The World Today" newspaper f
 
 ## The image
 
-A one-page front page, 1024×1024 PNG, under 1 MiB. The masthead names the day — **FRIDAY · 20 NOVEMBER · 2026** — in a red band, with three illustrated lead stories and a dense brief index of 17 more stories. Every story happened, or was first reported, on Friday 20 November 2026.
+A one-page front page, 1024×1024 PNG, under 1 MiB. The masthead names the day — **FRIDAY · 20 NOVEMBER · 2026** — in a red band, with three illustrated lead stories, a pinned world map, nine more illustrated stories and a dense brief index of 24 more stories: **36 verified stories of the day, 12 illustrations, 6 continents**.
 
 ## Lead stories
 
-1. **Missiles over Kyiv** (Ukraine) — Russia fires a wave of ballistic missiles at the capital in the early hours; air-raid alerts from 01:19, about a dozen missiles reported, aimed at bridges and energy sites; a projectile lands near the Dutch embassy, causing minor damage.
-2. **Cyclone Akvan hits the coast** (India) — Severe Cyclone Akvan crosses the Odisha–Andhra coast by noon; about 300,000 people evacuated to 9,341 shelters, 423 rescue teams deployed, 69 trains cancelled; winds 90–100 kmph, gusting to 110.
-3. **Asian stocks plunge** (Markets) — The Nikkei falls 4.5% to below 57,000 and the Kospi 4.7% as the AI selloff spreads; SoftBank drops 14%; the MSCI Asia-Pacific index falls for a seventh straight session.
+1. **Missiles over Kyiv** (Ukraine) — Russia fires a wave of ballistic missiles at the capital in the early hours; air-raid alerts from 01:19, about a dozen missiles reported.
+2. **Cyclone Akvan hits the coast** (India) — Severe Cyclone Akvan crosses the Odisha–Andhra coast by noon; about 300,000 people evacuated, 69 trains cancelled; winds 90–100 kmph.
+3. **Asian stocks plunge** (Markets) — The Nikkei falls 4.5% to below 57,000 and the Kospi 4.7% as the AI selloff spreads; SoftBank drops 14%; the MSCI Asia-Pacific index falls for a seventh session.
 
-## Also today — the brief index
+## The map
 
-Houthi strikes on four Saudi targets (and the coalition's intercepts); Taiwan's new short-selling curbs take effect; COP31 closes in Antalya with fossil fuels dropped from the draft; Trump's noon White House news conference after his China trip; oil steady near $92.60 Brent; the ATP Finals in Turin (Alcaraz v Cobolli, Medvedev v Tiafoe winner-takes-all); Taiwan's dollar near a 10-year low; a New Taipei council candidate released on bail; Taiwan's inheritance-law change; chip stocks sliding in Seoul and Tokyo; US monthly options expiry; Congress back facing the Dec 11 funding deadline; the Abu Dhabi T10 qualifier; Tokyo's three-day weekend; Nikkei futures; Taiwan's three-day slide; GIFT Nifty pointing lower.
+A simplified world map pins all 12 illustrated stories by number (1–3 the leads, 4–12 below), so the day's geography is visible at a glance: Kyiv, India's east coast, Tokyo, Riyadh, Hormuz, Genoa, Senegal, Brussels, Paris, Wellington and Cincinnati.
 
-Stories from 19 November — the Shenzhen trilateral summit, the ICJ Myanmar ruling, the Anthropic debut, the GTA VI launch, Voyager 1's light-day, Korea's $1 trillion exports, the Berlin Ukraine summit — were checked and deliberately left out: this page is 20 November alone.
+## More of the day — in pictures
 
-Sources: Reuters, BBC, AP, The Hindu, IMD, AFP, UDN, TradingView, ATP.
+4. **Houthi strike hits Riyadh tower** — an attack damages Saudi Arabia's tallest skyscraper; five missiles downed. 5. **Tanker burns off Hormuz** — a tanker catches fire after hitting a mine east of the Strait of Hormuz. 6. **Drones shut Genoa airport** — flights suspended after unidentified drones are detected. 7. **13,000 march in Tokyo** — protest against the Takaichi government's policies. 8. **Senegal search resumes** — four bodies recovered off Yenne; dozens missing after a migrant boat capsizes. 9. **EU plans €45bn for Ukraine** — the Commission proposes a €45 billion joint-debt loan. 10. **Harris meets Macron** — a courtesy meeting in Paris amid 2028 speculation. 11. **Nicholls tons up** — Henry Nicholls hits an unbeaten 113 for New Zealand against India in Wellington. 12. **Pete Rose pardoned** — Trump posthumously pardons the baseball legend.
+
+## Also today — the brief index (24 more stories)
+
+A projectile lands near the Dutch embassy in Kyiv; an Israeli airstrike hits a Hezbollah missile facility in eastern Lebanon; three killed in a drone attack on Russia's Saratov region; one dead, 15 injured in a fire at an 18-storey block in France; a 3-year-old rescued from rubble 8 hours after a Tbilisi gas explosion; the US sanctions Hezbollah-linked charities and gold traders; Venezuela signs a military deal with the US; the White House taps Kirsten Davies as cyber chief; California targets Nvidia in a China AI chip probe; Europe is ready for talks with Russia on ending the war; Yemen's parliament designates the Houthis a terrorist organisation; the IEA calls the Mideast conflict the biggest energy security threat in history; the IEA warns data-centre power use could double by 2030; Anthropic joins MSCI Large Cap and FTSE global indexes after its record IPO; nearly a quarter of the world's children live in conflict zones (Save the Children); Modi hails India's growth at the FICCI centenary; a fire at Muhammad Yunus's ancestral home in Chattogram; the NTA publishes the UGC NET December 2026 schedule; a man charged with terrorism offences after a Sydney raid; Taiwan's new short-selling curbs take effect; COP31 closes in Antalya with fossil fuels dropped from the draft; Trump's noon White House news conference after his China trip; the ATP Finals in Turin (Alcaraz v Cobolli, Medvedev v Tiafoe winner-takes-all); US monthly options expire as Wall Street reels from a tech reversal.
+
+Stories from 19 November — the Shenzhen trilateral summit, the ICJ Myanmar ruling, the Fiona the hippo death, the Senegal boat capsizing itself — were checked and deliberately left out, except where a story has a genuine 20 November development stated on the page (the Senegal search resuming, with four bodies recovered on the 20th): this page is 20 November alone.
+
+Sources: Reuters, BBC, AP, The Hindu, IMD, AFP, Le Monde, EIN Presswire, ATP.
 
 ## Files
 
